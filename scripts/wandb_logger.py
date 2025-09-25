@@ -485,8 +485,18 @@ def main():
         if args.model:
             wandb_model_name = args.model
         elif args.pass_custom_model:
-            # Use the same name transformation as the model detection system
-            wandb_model_name = args.pass_custom_model.replace('/', '_') if '/' in args.pass_custom_model else args.pass_custom_model
+            # Mirror register_custom_model naming so run.py sees the same alias
+            if args.pass_custom_model.startswith('/LOCAL_MODEL'):
+                local_model_path = args.pass_custom_model[len('/LOCAL_MODEL'):]
+                wandb_model_name = (
+                    local_model_path.replace('/', '_')
+                    if local_model_path else 'LOCAL_MODEL'
+                )
+            else:
+                wandb_model_name = (
+                    args.pass_custom_model.replace('/', '_')
+                    if '/' in args.pass_custom_model else args.pass_custom_model
+                )
         else:
             wandb_model_name = None
         
