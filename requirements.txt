@@ -1,5 +1,4 @@
 accelerate
-antlr4-python3-runtime==4.11.0
 dotenv
 einops
 # for gemini api
@@ -14,7 +13,7 @@ nltk
 numpy
 omegaconf
 openai
-opencv-python-headless>=4.4.0.46
+opencv-python>=4.7.0.72
 openpyxl
 pandas
 pillow
@@ -27,17 +26,15 @@ rich
 sentencepiece
 setuptools
 sty
+sympy
 tabulate
-tensorflow
 tiktoken
 timeout-decorator
 timm
 torch
 torchvision
 tqdm
-transformers>=4.46.0,<=4.48.0
+transformers
 typing_extensions
 validators
-vllm>=0.6.4
-wandb
 xlsxwriter
