@@ -1,0 +1,3 @@
+python scripts/wandb_logger.py --run-and-log --model Qwen2.5-VL-7B-Instruct --data VMCBench_DEV LiveXivTQA OlympiadBench Omni3DBench atomic_dataset electro_dataset mechanics_dataset optics_dataset quantum_dataset statistics_dataset --work-dir "./output" --max-output-tokens 8192 --use-vllm --batch-size 8
+
+python scripts/dcvlr_standalone_scorer.py --benchmarks VMCBench_DEV LiveXivTQA OlympiadBench Omni3DBench atomic_dataset electro_dataset mechanics_dataset optics_dataset quantum_dataset statistics_dataset --input-dir "./outputs/Qwen2.5-VL-7B-Instruct/T20251107_G1d983a41" --llm-backend openai --model gpt-4o-mini  --verbose
